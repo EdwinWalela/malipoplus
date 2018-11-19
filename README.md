@@ -3,6 +3,8 @@ M-PESA Online Payment REST API
 (under-development)
 
 Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
+## API info
+Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
 
 ## API config
 Base url : `https://malipo-plus.herokuapp.com`
