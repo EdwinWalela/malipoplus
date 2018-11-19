@@ -1,6 +1,11 @@
 # Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="left" width="50" height="50"/>
 
 M-PESA Online Payment REST API. Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
+## Installation
+Simply clone the repo and install all dependancies `npm install`
+
+run `npm start` to spin up the API on `localhost:3000`
+
 ## API info
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
 
