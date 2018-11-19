@@ -1,6 +1,6 @@
 # Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="left" width="50" height="50"/>
 
-M-PESA Online Payment REST API. Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
+M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API on a local enviroment or intergrate it into your application using Malipo+.
 ## 1. Installation
 Simply clone the repo and install all dependancies `npm install`
 
@@ -97,3 +97,6 @@ response format : `json`
    | body    | Not Found  |
    
   
+ ## 5. Refferences
+  * [Peter Njeru](https://peternjeru.co.ke/safdaraja/ui/)
+  * [Safaricom Daraja](https://developer.safaricom.co.ke/)
