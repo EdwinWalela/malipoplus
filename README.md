@@ -13,13 +13,25 @@ response format : `json`
 
 ## End-Points
 
-### POST api/newpayment
+### - POST api/newpayment
 | Query          | Value        |
 | :------------- |:------------:|
 | phonenumber    | 254700000000 |
 | amount         | 200          |
 
-### GET api/verify
+After a transacton request is sent successfuly sent to the user expect such a response:
+```
+{
+  "MerchantRequestID": "2133-8623129-1",
+  "CheckoutRequestID": "ws_CO_DMZ_172926767_19112018131435269",
+  "ResponseCode": "0",
+  "ResponseDescription": "Success. Request accepted for processing",
+  "CustomerMessage": "Success. Request accepted for processing"
+}
+```
+**Response Code '0'** indicates a successful stk push request to the user
+
+### - GET api/verify
 | Body           | Value        |
 | :------------- |:------------:|
 | phonenumber    | 254700000000 |
