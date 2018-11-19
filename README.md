@@ -4,6 +4,13 @@ M-PESA Online Payment REST API
 
 Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
 
+## API config
+Base url : `https://malipo-plus.herokuapp.com`
+
+headers : `none`
+
+response format : 'json'
+
 ## End-Points
 
 ### POST api/newpayment
