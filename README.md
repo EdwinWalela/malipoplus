@@ -13,6 +13,7 @@ Simply clone the repo and install all dependancies `npm install`
     This will house all the neccessary authentication configurations required to communicate with the safaricom Lipa na MPesa API
 
 ```javascript
+//paste this snippet in /config/credentials.js
 module.exports = {
     'consumer_key':'my-consumer-key',
     'consumer_secret':'my-consumer-secret',
@@ -26,7 +27,7 @@ module.exports = {
 ```
 
 * callbackURL - a `live` server where The M-Pesa API will send a response to after the user authenticates the transaction. The response
-will be saved on the database in the below format
+will be saved in the database in the format below:
 ```
 {
     "_id": {
@@ -44,7 +45,7 @@ will be saved on the database in the below format
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
 
 ## 3. API config
-Base url : `https://malipo-plus.herokuapp.com`
+Base url : `http://localhost:3000`
 
 headers : `none`
 
