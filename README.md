@@ -1,5 +1,7 @@
-# Malipo+ (malipo-plus)
 <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" width="100" height="100"/>
+
+# Malipo+ (malipo-plus)
+
 
 M-PESA Online Payment REST API
 (under-development)
