@@ -11,7 +11,7 @@ Base url : `https://malipo-plus.herokuapp.com`
 
 headers : `none`
 
-response format : 'json'
+response format : `json`
 
 ## End-Points
 
