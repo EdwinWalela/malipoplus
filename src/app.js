@@ -4,7 +4,6 @@ const port = process.env.PORT || 3000;
 const app = express();
 const mongoURI = require('../config/credentials').mongoDB.URI;
 // ROUTES
-const cbRoutes = require('./routes/api/callback_route');
 const transVerificationRoutes = require('./routes/api/transVerification_route');
 const newTransRoute = require('./routes/api/newPayment_route');
 
