@@ -17,7 +17,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
 app.use('/api/newPayment',newTransRoute);
-app.use('/api/cb',cbRoutes);
 app.use('/api/verify',transVerificationRoutes);
 
 app.get('/',(req,res)=>{
