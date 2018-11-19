@@ -103,6 +103,12 @@ The business short code is located in `/config/payments.js`
    | body    | Not Found  |
    
   
- ## 5. Refferences
+ ## 5. TODO
+ - [ ] Write tests
+ - [ ] Structure transaction verification body
+ - [ ] Handle incorrect mpesa pin
+ - [ ] Handle cancelled STK push by user
+  
+ ## 6. Refferences
   * [Peter Njeru](https://peternjeru.co.ke/safdaraja/ui/)
   * [Safaricom Daraja](https://developer.safaricom.co.ke/)
