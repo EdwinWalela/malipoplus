@@ -66,7 +66,7 @@ The business short code is located in `/config/payments.js`
 
   POST `http://localhost:3000/api/newpayment`
 
-  After a transacton request is sent successfuly sent to the user expect such a response:
+  After a transacton request is successfuly sent to the user, expect such a response:
   ```
   {
     "MerchantRequestID": "2133-8623129-1",
