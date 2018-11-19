@@ -1,4 +1,5 @@
 # Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="left" width="50" height="50"/>
+<a href="https://snyk.io/test/github/EdwinWalela/malipoplus?targetFile=package.json"><img src="https://snyk.io/test/github/EdwinWalela/malipoplus/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/EdwinWalela/malipoplus?targetFile=package.json" style="max-width:100%;"></a>
 
 M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API on a local enviroment or intergrate it into your application using Malipo+.
 ## 1. Installation
