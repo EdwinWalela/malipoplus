@@ -105,7 +105,7 @@ The business short code is located in `/config/payments.js`
   
  ## 5. TODO
  - [ ] Write tests
- - [ ] Structure transaction verification body
+ - [ ] Structure transaction verification response body
  - [ ] Handle incorrect mpesa pin
  - [ ] Handle cancelled STK push by user
   
