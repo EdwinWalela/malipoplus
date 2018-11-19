@@ -6,7 +6,7 @@ Simply clone the repo and install all dependancies `npm install`
 
 ### Requirements
 1. For making HTTP requests [You can download Postman Here](https://www.getpostman.com/apps)
-2. Create a Safaricom new developer account [here](https://developer.safaricom.co.ke/login-register) 
+2. Create a Safaricom new developer account [Here](https://developer.safaricom.co.ke/login-register) 
 3. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
 4. Create a new file `credentials.js` in `/config` 
 
