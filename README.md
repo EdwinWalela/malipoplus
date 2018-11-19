@@ -53,6 +53,9 @@ headers : `none`
 
 response format : `json`
 
+The business short code is located in `/config/payments.js`
+    You can use your own personal paybill but this should be done after [filling the test cases](https://developer.safaricom.co.ke/production_profile/form_production_profile) located on safaricom's developers dashboard. After which you will recieve production credentials.
+
 ## 4. End-Points
 
 ### - POST api/newpayment
