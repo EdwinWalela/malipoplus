@@ -11,7 +11,7 @@ const payment = require("../../../config/payment");
 const credentials = require("../../../config/credentials");
 
 Router.post('/',(req,res)=>{
-    if(req.body.mobile.length == 12 && req.body.amount > 0){
+    if(req.body.phonenumber.length == 12 && req.body.amount > 0){
         newToken.then(body=>{
             body = JSON.parse(body);
             const options = {
@@ -25,9 +25,9 @@ Router.post('/',(req,res)=>{
                 "Timestamp": pass.timestamp,
                 "TransactionType": "CustomerPayBillOnline",
                 "Amount": req.body.amount,
-                "PartyA": req.body.mobile,
+                "PartyA": req.body.phonenumber,
                 "PartyB": payment.BusinessShortCode,
-                "PhoneNumber": req.body.mobile,
+                "PhoneNumber": req.body.phonenumber,
                 "CallBackURL": credentials.CallBackURL,
                 "AccountReference": "account",
                 "TransactionDesc": "please work" 
