@@ -1,6 +1,6 @@
 const Router = require('express').Router();
 
-const request = require("request");
+const request = require("request-promise");
 // new token generator
 const newToken = require("../../../config/access_token");
 //encoded pass key and timestamp 
@@ -11,6 +11,7 @@ const payment = require("../../../config/payment");
 const credentials = require("../../../config/credentials");
 
 Router.post('/',(req,res)=>{
+    let response;
     if(req.body.phonenumber.length == 12 && req.body.amount > 0){
         newToken.then(body=>{
             body = JSON.parse(body);
@@ -34,13 +35,15 @@ Router.post('/',(req,res)=>{
                 }
             };
             const callback = (err,res) =>{
-                console.log(res.body);
+                response = res.body;
+                console.log(response);
             }
-			request.post(options,callback);
-			res.status(200).send('OK');
+            request.post(options,callback).then(()=>{
+                res.status(200).send(response);
+            });
         })
     }else{
-        res.send(503,'parameter error');
+        res.status(503).send('parameter error');
     }
 })
 

@@ -25,7 +25,6 @@ const timestamp = () => {
     return '' + yr + mm + dd + hr + min + sec;
 }
 
-console.log(timestamp());
 module.exports =  {
     'key':new Buffer(`${payment.BusinessShortCode}${credentials.lnm_key}${timestamp()}`).toString("base64"),
     'timestamp':timestamp()

@@ -5,7 +5,8 @@ const newTransSchema = new Schema({
     amount:Number,
     recieptNo:String,
     transactionDate:Number,
-    phoneNumber:Number
+    phoneNumber:Number,
+    confirmed:Boolean,
 })
 
 const newTrans = mongoose.model('transactions',newTransSchema);
