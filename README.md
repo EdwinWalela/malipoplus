@@ -1,8 +1,6 @@
-# Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="right" width="60" height="60"/>
+# Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="left" width="50" height="50"/>
 
-M-PESA Online Payment REST API
-
-Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
+M-PESA Online Payment REST API. Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
 ## API info
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
 
