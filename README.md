@@ -1,43 +1,78 @@
 # Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="left" width="50" height="50"/>
 
 M-PESA Online Payment REST API. Easily intergrate M-Pesa Online payment API into your application using HTTP requests.
-## Installation
+## 1. Installation
 Simply clone the repo and install all dependancies `npm install`
 
-run `npm start` to spin up the API on `localhost:3000`
+### Requirements
+1. Create a Safaricom new developer account [here](https://developer.safaricom.co.ke/login-register) 
+2. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
+3. Create a new file `credentials.js` in `/config` 
 
-## API info
+    This will house all the neccessary authentication configurations required to communicate with the safaricom Lipa na MPesa API
+
+```javascript
+module.exports = {
+    'consumer_key':'my-consumer-key',
+    'consumer_secret':'my-consumer-secret',
+    // this can be obtained from 'https://developer.safaricom.co.ke/test_credentials'
+    'lnm_key':'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919',
+    "CallBackURL": "https://malipo-plus.herokuapp.com/api/cb",
+    "mongoDB":{
+        "URI":"mongodb://malipotest:malipo254@ds211504.mlab.com:11504/malipoplus"
+    }
+}
+```
+
+* callbackURL - a `live` server where The M-Pesa API will send a response to after the user authenticates the transaction. The response
+will be saved on the database in the below format
+```
+{
+    "_id": {
+        "$oid": "5bf1bcf0f106d80016efce20"
+    },
+    "amount": 1,
+    "recieptNo": "MKI7YPUA0D",
+    "transactionDate": 1542569200319,
+    "phoneNumber": 254700000000,
+}
+```
+4. run `npm start` to spin up the API on `localhost:3000`
+
+## 2. API info
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
 
-## API config
+## 3. API config
 Base url : `https://malipo-plus.herokuapp.com`
 
 headers : `none`
 
 response format : `json`
 
-## End-Points
+## 4. End-Points
 
 ### - POST api/newpayment
-| Query          | Value        |
+| Body           | Value        |
 | :------------- |:------------:|
 | phonenumber    | 254700000000 |
 | amount         | 200          |
 
-After a transacton request is sent successfuly sent to the user expect such a response:
-```
-{
-  "MerchantRequestID": "2133-8623129-1",
-  "CheckoutRequestID": "ws_CO_DMZ_172926767_19112018131435269",
-  "ResponseCode": "0",
-  "ResponseDescription": "Success. Request accepted for processing",
-  "CustomerMessage": "Success. Request accepted for processing"
-}
-```
-**Response Code '0'** indicates a successful stk push request to the user
+  POST `http://localhost:3000/api/newpayment`
+
+  After a transacton request is sent successfuly sent to the user expect such a response:
+  ```
+  {
+    "MerchantRequestID": "2133-8623129-1",
+    "CheckoutRequestID": "ws_CO_DMZ_172926767_19112018131435269",
+    "ResponseCode": "0",
+    "ResponseDescription": "Success. Request accepted for processing",
+    "CustomerMessage": "Success. Request accepted for processing"
+  }
+  ```
+  **Response Code '0'** indicates a successful stk push request to the user
 
 ### - GET api/verify
-| Body           | Value        |
+| Query          | Value        |
 | :------------- |:------------:|
 | phonenumber    | 254700000000 |
 | amount         | 200          |
