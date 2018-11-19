@@ -95,7 +95,7 @@ The business short code is located in `/config/payments.js`
    | body    |  OK   |
    
    
-   A status of 404 will be sent if a the specified payment does not exist or if the payment has already been verified
+   A status of 404 will be sent if the specified payment does not exist or if the payment has already been verified
    
    | response| Value |
    | :-----: |:-----:|
