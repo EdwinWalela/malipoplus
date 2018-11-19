@@ -5,9 +5,10 @@ M-PESA Online Payment REST API. Easily intergrate M-Pesa Online payment API into
 Simply clone the repo and install all dependancies `npm install`
 
 ### Requirements
-1. Create a Safaricom new developer account [here](https://developer.safaricom.co.ke/login-register) 
-2. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
-3. Create a new file `credentials.js` in `/config` 
+1. For making HTTP requests [You can download Postman Here](https://www.getpostman.com/apps)
+2. Create a Safaricom new developer account [here](https://developer.safaricom.co.ke/login-register) 
+3. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
+4. Create a new file `credentials.js` in `/config` 
 
     This will house all the neccessary authentication configurations required to communicate with the safaricom Lipa na MPesa API
 
@@ -37,7 +38,7 @@ will be saved on the database in the below format
     "phoneNumber": 254700000000,
 }
 ```
-4. run `npm start` to spin up the API on `localhost:3000`
+5. run `npm start` to spin up the API on `localhost:3000`
 
 ## 2. API info
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
@@ -76,3 +77,23 @@ response format : `json`
 | :------------- |:------------:|
 | phonenumber    | 254700000000 |
 | amount         | 200          |
+
+
+   GET `localhost:3000/api/verify?phonenumber=254706496885&amount=200`
+     
+   A status of 200 indicates that the transaction was successfully verified 
+    
+   | response| Value |
+   | :-----: |:-----:|
+   | status  |  200  |
+   | body    |  OK   |
+   
+   
+   A status of 404 will be sent if a the specified payment does not exist or if the payment has already been verified
+   
+   | response| Value |
+   | :-----: |:-----:|
+   | status  | 404 |
+   | body    | Not Found  |
+   
+  
