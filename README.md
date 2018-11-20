@@ -4,7 +4,7 @@
 
 M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API on a local enviroment or intergrate it into your application using Malipo+.
 
-## Prerquistes
+## Prerequisites
 * Javascript 
 * Node 
 * HTTP requests
