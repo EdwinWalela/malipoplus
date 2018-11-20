@@ -108,6 +108,7 @@ The business short code is located in `/config/payments.js`
  - [ ] Structure transaction verification response body
  - [ ] Handle incorrect mpesa pin
  - [ ] Handle cancelled STK push by user
+ - [ ] Create a interactive front-end for the api (educational)
   
  ## 6. Refferences
   * [Peter Njeru](https://peternjeru.co.ke/safdaraja/ui/)
