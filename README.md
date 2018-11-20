@@ -3,6 +3,13 @@
 [![Build Status](https://travis-ci.org/EdwinWalela/malipoplus.svg?branch=master)](https://travis-ci.org/EdwinWalela/malipoplus)
 
 M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API on a local enviroment or intergrate it into your application using Malipo+.
+
+## Prerquistes
+* Javascript 
+* Node 
+* HTTP requests
+
+
 ## 1. Installation
 Simply clone the repo and install all dependancies `npm install`
 
@@ -105,9 +112,13 @@ The business short code is located in `/config/payments.js`
   
  ## 5. TODO
  - [ ] Write tests
+ 
  - [ ] Structure transaction verification response body
- - [ ] Handle incorrect mpesa pin
- - [ ] Handle cancelled STK push by user
+ 
+ - [x] Handle incorrect mpesa pin
+ 
+ - [x] Handle cancelled STK push by user
+ 
  - [ ] Create a interactive front-end for the api (educational)
   
  ## 6. Refferences
