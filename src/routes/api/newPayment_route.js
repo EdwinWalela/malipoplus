@@ -1,14 +1,11 @@
 const Router = require('express').Router();
-
 const request = require("request-promise");
-// new token generator
-const newToken = require("../../../config/access_token");
-//encoded pass key and timestamp 
+
 const pass = require("../../../config/password");
 // new payment details
 const payment = require("../../../config/payment");
-// callback url
-const credentials = require("../../../config/credentials");
+// new access token generator
+const newToken = require("../../../config/access_token");
 
 Router.post('/',(req,res)=>{
     let response;
@@ -24,19 +21,18 @@ Router.post('/',(req,res)=>{
                 "BusinessShortCode":payment.BusinessShortCode,
                 "Password": pass.key,
                 "Timestamp": pass.timestamp,
-                "TransactionType": "CustomerPayBillOnline",
+                "TransactionType": "CustomerBuyGoodsOnline",
                 "Amount": req.body.amount,
                 "PartyA": req.body.phonenumber,
                 "PartyB": payment.BusinessShortCode,
                 "PhoneNumber": req.body.phonenumber,
-                "CallBackURL": credentials.CallBackURL,
-                "AccountReference": "account",
+                "CallBackURL": process.env.CB_URL,
+                "AccountReference": "MD-37A",
                 "TransactionDesc": "please work" 
                 }
             };
             const callback = (err,res) =>{
                 response = res.body;
-                console.log(response);
             }
             request.post(options,callback).then(()=>{
                 res.status(200).send(response);

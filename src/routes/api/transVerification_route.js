@@ -8,16 +8,15 @@ Router.get('/',(req,res)=>{
     Transaction.findOneAndUpdate(
         {
             $and:[{phoneNumber:phoneNumber},{amount:amount},{confirmed:false}],
-        },{$set:{confirmed:true}}
+        },
+        {$set:{confirmed:true}}
     ).then(transactions=>{
         transactions ? res.status(200).send('OK') : res.status(404).send('Not Found')
     }).catch(err=>{
         console.log('error: ',err);
         res.json('504',err)
     })
+
 })
-
-
-
 
 module.exports = Router;

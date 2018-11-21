@@ -2,12 +2,9 @@
     //password encoding : base64.encode(Shortcode+Passkey+Timestamp)           //
     //timestamp format: YYYMMDDHHmmss                                          //
     //-------------------------------------------------------------------------//
-
+    
 // retrieve businessshortcode
 const payment = require("./payment");
-
-// retrieve lnm key
-const credentials = require('./credentials');
 
 const timestamp = () => {
     let now = new Date();
@@ -26,6 +23,6 @@ const timestamp = () => {
 }
 
 module.exports =  {
-    'key':new Buffer(`${payment.BusinessShortCode}${credentials.lnm_key}${timestamp()}`).toString("base64"),
+    'key':new Buffer(`${payment.BusinessShortCode}${process.env.PASS_KEY}${timestamp()}`).toString("base64"),
     'timestamp':timestamp()
 }

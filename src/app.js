@@ -2,15 +2,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 const app = express();
-const mongoURI = require('../config/credentials').mongoDB.URI;
 // ROUTES
 const transVerificationRoutes = require('./routes/api/transVerification_route');
 const newTransRoute = require('./routes/api/newPayment_route');
 
 
-mongoose.connect(mongoURI,()=>{
-    console.log('connected to db');
-})
+mongoose.connect(process.env.DB_URI);
+
+mongoose.connection
+    .once('open',()=>console.log('connected to db'))
+    .on('error',(err)=>console.log)
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
