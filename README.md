@@ -11,28 +11,24 @@ M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API o
 
 
 ## 1. Installation
-Simply clone the repo and install all dependancies `npm install`
+Simply fork then clone the repo and install all dependancies `npm install`
 
 ### Requirements
+ 
 1. For making HTTP requests [You can download Postman Here](https://www.getpostman.com/apps)
 2. Create a Safaricom new developer account [Here](https://developer.safaricom.co.ke/login-register) 
 3. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
-4. Create a new file `credentials.js` in `/config` 
+   ### Local installation
+4. Create a new enviroment variables file `.env` in `malipoplus` (remember to include it `.gitignore`)
 
     This will house all the neccessary authentication configurations required to communicate with the safaricom Lipa na MPesa API
 
-```javascript
-//paste this snippet in /config/credentials.js
-module.exports = {
-    'consumer_key':'my-consumer-key',
-    'consumer_secret':'my-consumer-secret',
-    // this can be obtained from 'https://developer.safaricom.co.ke/test_credentials'
-    'lnm_key':'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919',
-    "CallBackURL": "https://malipo-plus.herokuapp.com/api/cb",
-    "mongoDB":{
-        "URI":"mongodb://malipotest:malipo254@ds211504.mlab.com:11504/malipoplus"
-    }
-}
+```
+    CB_URL=
+    CONSUMER_KEY=
+    CONSUMER_SECRET=
+    DB_URI=
+    PASS_KEY=
 ```
 
 * callbackURL - a `live` server where The M-Pesa API will send a response to after the user authenticates the transaction. The response
@@ -54,11 +50,13 @@ will be saved in the database in the format below:
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
 
 ## 3. API config
-Base url : `http://localhost:3000`
+Base url : `https://malipoplus.herokuapp.com/`
 
 headers : `none`
 
-response format : `json`
+response format : `application/json`
+
+request body : `application/x-www-form-urlencoded`
 
 The business short code is located in `/config/payments.js`
     You can use your own personal paybill but this should be done after [filling the test cases](https://developer.safaricom.co.ke/production_profile/form_production_profile) located on safaricom's developers dashboard. After which you will recieve production credentials. Step by Step [documentation can be found here](https://developer.safaricom.co.ke/docs#test-cases)
@@ -71,7 +69,7 @@ The business short code is located in `/config/payments.js`
 | phonenumber    | 254700000000 |
 | amount         | 200          |
 
-  POST `http://localhost:3000/api/newpayment`
+  POST `https://malipoplus.herokuapp.com/api/newpayment`
 
   After a transacton request is successfuly sent to the user, expect such a response:
   ```
@@ -92,7 +90,7 @@ The business short code is located in `/config/payments.js`
 | amount         | 200          |
 
 
-   GET `localhost:3000/api/verify?phonenumber=254706496885&amount=200`
+   GET `https://malipoplus.herokuapp.com/api/verify?phonenumber=254706496885&amount=200`
      
    A status of 200 indicates that the transaction was successfully verified 
     
