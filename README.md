@@ -18,9 +18,10 @@ Simply fork
 1. For making HTTP requests [You can download Postman Here](https://www.getpostman.com/apps)
 2. Create a Safaricom new developer account [Here](https://developer.safaricom.co.ke/login-register) 
 3. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
-   ### Local installation
-       install all dependancies `npm install`
-4. Create a new enviroment variables file `.env` in `malipoplus` (remember to include it `.gitignore`)
+
+### Local installation
+1. Install all dependancies `npm install`
+2. Create a new enviroment variables file `.env` in `malipoplus` (remember to include it `.gitignore`)
 
     This will house all the neccessary authentication configurations required to communicate with the safaricom Lipa na MPesa API
 
@@ -45,7 +46,7 @@ will be saved in the database in the format below:
     "phoneNumber": 254700000000,
 }
 ```
-5. run `npm start` to spin up the API on `localhost:3000`
+3. run `npm start` to spin up the API on `localhost:3000`
 
 ## 2. API info
 Currently all payments request are sent to M-Pesa Test paybill which will be reversed in atmost 24 hours
