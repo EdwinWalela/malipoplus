@@ -1,7 +1,15 @@
 # Malipo+ (malipo-plus) <img src ="https://github.com/EdwinWalela/malipoplus/blob/master/logo.png" align="left" width="50" height="50"/>
 <a href="https://snyk.io/test/github/EdwinWalela/malipoplus?targetFile=package.json"><img src="https://snyk.io/test/github/EdwinWalela/malipoplus/badge.svg?targetFile=package.json" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/EdwinWalela/malipoplus?targetFile=package.json" style="max-width:100%;"></a>
+[![Build Status](https://travis-ci.org/EdwinWalela/malipoplus.svg?branch=master)](https://travis-ci.org/EdwinWalela/malipoplus)
 
 M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API on a local enviroment or intergrate it into your application using Malipo+.
+
+## Prerequisites
+* Javascript 
+* Node 
+* HTTP requests
+
+
 ## 1. Installation
 Simply clone the repo and install all dependancies `npm install`
 
@@ -52,6 +60,9 @@ headers : `none`
 
 response format : `json`
 
+The business short code is located in `/config/payments.js`
+    You can use your own personal paybill but this should be done after [filling the test cases](https://developer.safaricom.co.ke/production_profile/form_production_profile) located on safaricom's developers dashboard. After which you will recieve production credentials. Step by Step [documentation can be found here](https://developer.safaricom.co.ke/docs#test-cases)
+
 ## 4. End-Points
 
 ### - POST api/newpayment
@@ -62,7 +73,7 @@ response format : `json`
 
   POST `http://localhost:3000/api/newpayment`
 
-  After a transacton request is sent successfuly sent to the user expect such a response:
+  After a transacton request is successfuly sent to the user, expect such a response:
   ```
   {
     "MerchantRequestID": "2133-8623129-1",
@@ -91,7 +102,7 @@ response format : `json`
    | body    |  OK   |
    
    
-   A status of 404 will be sent if a the specified payment does not exist or if the payment has already been verified
+   A status of 404 will be sent if the specified payment does not exist or if the payment has already been verified
    
    | response| Value |
    | :-----: |:-----:|
@@ -99,6 +110,17 @@ response format : `json`
    | body    | Not Found  |
    
   
- ## 5. Refferences
+ ## 5. TODO
+ - [ ] Write tests
+ 
+ - [ ] Structure transaction verification response body
+ 
+ - [x] Handle incorrect mpesa pin
+ 
+ - [x] Handle cancelled STK push by user
+ 
+ - [ ] Create a interactive front-end for the api (educational)
+  
+ ## 6. Refferences
   * [Peter Njeru](https://peternjeru.co.ke/safdaraja/ui/)
   * [Safaricom Daraja](https://developer.safaricom.co.ke/)
