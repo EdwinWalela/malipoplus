@@ -10,8 +10,8 @@ M-PESA Online Payment REST API. Easily play with the M-Pesa Online payment API o
 * HTTP requests
 
 
-## 1. Installation
-Simply fork then clone the repo and install all dependancies `npm install`
+## 1. Getting Started
+Simply fork
 
 ### Requirements
  
@@ -19,6 +19,7 @@ Simply fork then clone the repo and install all dependancies `npm install`
 2. Create a Safaricom new developer account [Here](https://developer.safaricom.co.ke/login-register) 
 3. Click on `Add a new app` and you will receive a `consumer key` and `consumer secret`
    ### Local installation
+       install all dependancies `npm install`
 4. Create a new enviroment variables file `.env` in `malipoplus` (remember to include it `.gitignore`)
 
     This will house all the neccessary authentication configurations required to communicate with the safaricom Lipa na MPesa API
