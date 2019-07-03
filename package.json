@@ -4,7 +4,9 @@
   "description": "",
   "main": "api.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "author": "edwin walela",
   "license": "ISC",
@@ -14,6 +16,8 @@
     "mocha": "^5.2.0",
     "mongoose": "^5.3.4",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
-  }
+    "request-promise": "^4.2.2",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
