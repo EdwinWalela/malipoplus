@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 const app = express();
+const cors = require("cors");
 // ROUTES
 const transVerificationRoutes = require('./routes/api/transVerification_route');
 const newTransRoute = require('./routes/api/newPayment_route');
@@ -13,6 +14,7 @@ mongoose.connection
     .once('open',()=>console.log('connected to db'))
     .on('error',(err)=>console.log)
 
+app.use(cors());
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
